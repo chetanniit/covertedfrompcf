@@ -1,0 +1,8 @@
+version: "3.5"
+services:
+  simple-pcf-application:
+    container_name: simple-pcf-application
+    image: quay.io/sample-app/simple-pcf-application:latest
+    ports:
+      - target: 8080
+        published: 8080

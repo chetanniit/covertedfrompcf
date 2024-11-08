@@ -1,0 +1,5 @@
+resources:
+  - quay-io-imagepullsecret-secret.yaml
+  - simple-pcf-application-deployment.yaml
+  - simple-pcf-application-service.yaml
+  - myproject-ingress.yaml

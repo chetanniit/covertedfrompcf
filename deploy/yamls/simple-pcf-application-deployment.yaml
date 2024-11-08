@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    move2kube.konveyor.io/service: simple-pcf-application
+  name: simple-pcf-application
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      move2kube.konveyor.io/service: simple-pcf-application
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        move2kube.konveyor.io/service: simple-pcf-application
+      name: simple-pcf-application
+    spec:
+      containers:
+        - image: quay.io/sample-app/simple-pcf-application:latest
+          imagePullPolicy: Always
+          name: simple-pcf-application
+          ports:
+            - containerPort: 8080
+          resources: {}
+      imagePullSecrets:
+        - name: quay-io-imagepullsecret
+      restartPolicy: Always
+      securityContext: {}
+status: {}
